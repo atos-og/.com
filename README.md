@@ -1,4 +1,4 @@
-# Portfolio — cópia local de davi.im
+# Atos Barros Almeida — Portfolio
 
 Projeto completo em Next.js, React e TypeScript, salvo em `Documentos\portfolio`.
 Inclui as seis páginas, fontes e mídias locais, tema claro/escuro, menu do celular,
@@ -60,7 +60,7 @@ fica em `VERIFICACAO.md`.
 
 ## Publicação na Vercel
 
-Site público: https://atos-barros-portfolio.vercel.app
+Site público: https://www.atosbarros.dev
 Projeto Vercel: moveclub/atos-barros-portfolio.
 
 O arquivo vercel.json configura npm run build e serve o export .next-build.
@@ -75,3 +75,23 @@ npx vercel --prod --scope moveclub
 ```
 
 O projeto ainda não está conectado a um repositório Git para deploy automático.
+## Controle de versões
+
+- `main`: base com o nome `atos` no header e favicon `a`.
+- `v1.0.0-text-brand`: marco da versão anterior aos experimentos com mascote.
+- `preview/mascot`: experiência visual separada; não está aprovada para produção.
+
+Para consultar a versão preservada sem mudar seu diretório atual:
+
+```sh
+git show v1.0.0-text-brand:src/components/Header.tsx
+git diff main...preview/mascot
+```
+
+Salvar um commit ou enviar ao GitHub não é um pedido de publicação na Vercel.
+A ligação para deploy automático deve ser configurada separadamente, quando desejada.
+Antes de trocar de branch, salve ou faça commit das suas alterações locais.
+
+O repositório inclui código, assets e configurações necessárias para reconstruir o site.
+Dependências, builds, logs, arquivos `.env` e a pasta local `.vercel` são ignorados.
+Em uma nova máquina, use `npm ci` e depois `npm run dev`.
