@@ -1,0 +1,57 @@
+/* interacao.css — conserto de hit-testing, gerado por
+   scripts/corrige-interacao.mjs.
+
+   🚨 Pseudo-elemento decorativo NÃO pode receber ponteiro.
+
+   O ditto gera `::after` com `position:absolute; inset:0` em section, nav e
+   afins, para desenhar borda e fundo. Pseudo-elemento participa do
+   hit-testing, então essa decoração cobre a seção inteira e engole o mouse de
+   todo interativo dentro dela.
+
+   Prova, do log do Playwright no clone do launchfolio:
+     <section id="pricing" class="... after:absolute after:inset-0">
+        intercepts pointer events
+
+   Efeito: 17 alvos em timeout, FAQ sem abrir, zero resposta a clique.
+
+   Isto NÃO muda nada visualmente: o pseudo-elemento continua sendo pintado
+   igual. Só para de interceptar evento. */
+
+[data-cid]::before,
+[data-cid]::after {
+  pointer-events: none;
+}
+
+/* O mesmo vale para a raiz do documento e o body, que o gerador também
+   decora. */
+body::before,
+body::after {
+  pointer-events: none;
+}
+
+/* 🚨 Elemento interativo tem que receber ponteiro.
+
+   O gerador deixa elementos interativos mortos — medido: 5 na home, entre eles
+   os links "Work", "Services", "Pricing" e "Blog" da navegação e o botão
+   "Contact", todos vivos no ORIGINAL.
+
+   ⚠️ E a marca NÃO fica no próprio link: está num ANCESTRAL. Medido:
+
+     [1] a "Work"     -> pointer-events:none em p
+     [5] button "Contact" -> pointer-events:none em div
+
+   Uma regra que só cobrisse `a.pointer-events-none` não pega nada — foi o
+   que aconteceu na primeira tentativa, e os 5 continuaram mortos.
+
+   Em CSS, `pointer-events: auto` no filho RESTAURA o evento mesmo com o pai
+   em `none`. Então a regra vale para o interativo, onde quer que esteja a
+   marca. */
+a[href],
+button,
+[role="button"],
+input,
+select,
+textarea,
+summary {
+  pointer-events: auto;
+}
