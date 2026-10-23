@@ -79,13 +79,12 @@ O projeto ainda não está conectado a um repositório Git para deploy automáti
 
 - `main`: base com o nome `atos` no header e favicon `a`.
 - `v1.0.0-text-brand`: marco da versão anterior aos experimentos com mascote.
-- `preview/mascot`: experiência visual separada; não está aprovada para produção.
+Experimentos visuais ficam apenas em cópias locais até serem aprovados.
 
 Para consultar a versão preservada sem mudar seu diretório atual:
 
 ```sh
 git show v1.0.0-text-brand:src/components/Header.tsx
-git diff main...preview/mascot
 ```
 
 Salvar um commit ou enviar ao GitHub não é um pedido de publicação na Vercel.
