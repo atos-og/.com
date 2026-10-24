@@ -103,3 +103,14 @@ O favicon `src/app/icon.svg` incorpora o mesmo retrato para manter a identidade.
 A versão sem mascote permanece disponível na tag `v1.0.0-text-brand`.
 Para desfazer apenas esta mudança, use `git revert` no commit que adiciona o mascote
 (e publique novamente na Vercel), preservando o restante do histórico.
+
+## Estatísticas de visitas
+
+O componente `Analytics` de `@vercel/analytics/next` fica no layout compartilhado
+para medir as visitas em todas as páginas publicadas na Vercel.
+Painel: https://vercel.com/moveclub/atos-barros-portfolio/analytics
+
+Os dados são agregados e anônimos; a integração não identifica pessoas por nome.
+A coleta começa após a ativação e o deploy, sem recuperar visitas anteriores.
+As páginas locais usam o modo de desenvolvimento do SDK.
+Eventos personalizados de cliques não foram incluídos nesta configuração básica.
