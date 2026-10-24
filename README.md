@@ -77,7 +77,7 @@ npx vercel --prod --scope moveclub
 O projeto ainda não está conectado a um repositório Git para deploy automático.
 ## Controle de versões
 
-- `main`: base com o nome `atos` no header e favicon `a`.
+- `main`: versão atual aprovada, com retrato circular + `atos.` no header e o mesmo retrato no favicon.
 - `v1.0.0-text-brand`: marco da versão anterior aos experimentos com mascote.
 Experimentos visuais ficam apenas em cópias locais até serem aprovados.
 
@@ -94,3 +94,12 @@ Antes de trocar de branch, salve ou faça commit das suas alterações locais.
 O repositório inclui código, assets e configurações necessárias para reconstruir o site.
 Dependências, builds, logs, arquivos `.env` e a pasta local `.vercel` são ignorados.
 Em uma nova máquina, use `npm ci` e depois `npm run dev`.
+
+### Identidade visual
+
+O header compartilhado usa `public/mascot-atos.png` com recorte circular.
+Os estilos do retrato e do nome estão em `src/app/mascot-brand.css`.
+O favicon `src/app/icon.svg` incorpora o mesmo retrato para manter a identidade.
+A versão sem mascote permanece disponível na tag `v1.0.0-text-brand`.
+Para desfazer apenas esta mudança, use `git revert` no commit que adiciona o mascote
+(e publique novamente na Vercel), preservando o restante do histórico.

@@ -3,8 +3,8 @@ export default function Header(){return (
 {" "}
   <div className={"glass-nav-row"}>
 {" "}
-    <a href={"/"} className={"glass-brand"}>
-{"\natos\n"}
+    <a href={"/"} className={"glass-brand mascot-brand"} aria-label="Atos — home">
+<span className="brand-portrait"><img src="/mascot-atos.png" width="48" height="48" alt="" /></span><span className="brand-type"><span className="brand-name">atos<span className="brand-period">.</span></span><span className="brand-caption">building &amp; exploring</span></span>
     </a>
 {" "}
 {" "}

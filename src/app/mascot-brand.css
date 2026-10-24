@@ -1,0 +1,12 @@
+/* Portfolio identity: approved portrait and wordmark. */
+.glass-nav-row{padding:10px 16px 10px 12px;min-height:72px}
+.glass-brand.mascot-brand{display:flex;align-items:center;gap:11px;width:auto;height:auto;flex-shrink:0;letter-spacing:0}
+.brand-portrait{display:block;width:44px;height:44px;flex:none;overflow:hidden;border-radius:50%;background:#e8eef4;border:1px solid #d2dce7;box-shadow:0 1px 2px #1736550b}
+.brand-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 32%;transform:scale(1.16)}
+.brand-name{font-family:var(--font-sans);font-size:22px;font-weight:650;letter-spacing:-.8px;line-height:1.1;color:#173655}
+.brand-period{color:#7894b3}
+.brand-caption{display:none}
+.dark .brand-name{color:#c0d3e8}
+.dark .brand-period{color:#7894b3}
+.dark .brand-portrait{border-color:#8eaccb55;background:#e8eef4}
+@media(max-width:639px){.glass-nav-row{min-height:62px;padding:8px 10px}.glass-brand.mascot-brand{gap:10px}.brand-portrait{width:40px;height:40px}.brand-name{font-size:21px}}
