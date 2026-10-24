@@ -1,7 +1,7 @@
 // Edit your biography and project cards here.
 export const about = [
   "I build things. Curiosity is one of my main drivers: I enjoy exploring ideas, understanding how things work and turning what I learn into something useful.",
-  "I founded a business in the digital market that generated six-figure revenue. Currently, I'm building a stealth startup.",
+  "I founded an e-commerce business that generated six-figure revenue. Currently, I'm building a stealth project.",
   "I study Computer Science at PUC Minas, in Minas Gerais, Brazil, building a strong foundation in mathematics, algorithms and computational thinking. I'm always looking to build useful side projects that create real value.",
   "My tools: Python, C, JavaScript, Java and TypeScript — and whatever else the project needs. I'm especially interested in AI agents, data science and finding new ways to use technology to solve big real problems."
 ];
